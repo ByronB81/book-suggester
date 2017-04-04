@@ -11,25 +11,56 @@ var library = [
   fantasy5 = new Book('American Gods', 'Neil Gaiman', 'fantasy', 2001, 784),
 ];
 
-function Book(bookTitle, author, genre, year, about, pageCount) {
+function Book(bookTitle, author, genre, year, pageCount) {
   this.bookTitle = bookTitle;
   this.author = author;
   this.genre = genre;
   this.year = year;
-  this.about = about;
+  this.pageCount = pageCount;
 }
 
-function searchGenre(genre) {
+function genreFilter(genre) {
+  var filter = [];
   for (i = 0; i < library.length; i++) {
     if (library[i].genre === genre) {
-      console.log(library[i]);
-    } else {
-      console.log('search failed');
+      filter.push(library[i]);
+    }     
+  }
+  return filter;
+}
+
+function eraFilter(bookArray, era) {
+  var filter = [];
+  for (i = 0; i < bookArray.length; i++) {
+    if (era === "modern") {
+      if (bookArray[i].year > 1980) {
+        filter.push(bookArray[i]);
+      }
+    } else if (era === "classic") {
+      if (bookArray[i].year < 1980) {
+        filter.push(bookArray[i]);
+      }
     }
   }
+  return filter;
+}
+
+function lengthFilter(bookArray, bookLength) {
+  var filter = [];
+  for (i = 0; i < bookArray.length; i++) {
+    if (bookLength === 'short') {
+      if (bookArray[i].pageCount < 300) {
+        filter.push(bookArray[i]);
+      }
+    } else if (bookLength === 'long') {
+       if (bookArray[i].pageCount > 300) {
+        filter.push(bookArray[i]);
+      }
+    }
+  }
+  return filter;
 }
 
 $(function(){
-  console.log(library);
-  searchGenre('science fiction');
+  console.log(lengthFilter(eraFilter(genreFilter('science fiction'), "classic"), "long"));
 });
