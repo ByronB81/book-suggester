@@ -24,7 +24,7 @@ function genreFilter(genre) {
   for (i = 0; i < library.length; i++) {
     if (library[i].genre === genre) {
       filter.push(library[i]);
-    }     
+    }
   }
   return filter;
 }
@@ -61,6 +61,17 @@ function lengthFilter(bookArray, bookLength) {
   return filter;
 }
 
-$(function(){
-  console.log(lengthFilter(eraFilter(genreFilter('science fiction'), "classic"), "long"));
+function suggest(genre, era, pageCount) {
+  return (lengthFilter(eraFilter(genreFilter(genre), era), pageCount));
+}
+
+$(function() {
+  $('form').submit(function(event){
+    event.preventDefault();
+    var genreInput = $('input:radio[name="genre"]:checked').val();
+    var eraInput = $('input:radio[name="era"]:checked').val();
+    var pageCountInput = $('input:radio[name="page-count"]:checked').val();
+    var bookResults = suggest(genreInput, eraInput, pageCountInput);
+
+  })
 });
