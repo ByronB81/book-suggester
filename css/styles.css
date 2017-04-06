@@ -33,6 +33,21 @@ p, form {
   font-size: 20px;
 }
 
-.suggested-book {
+#output {
+  margin-top: 100px;
+  display: none;
+}
 
+.suggested-book {
+  display: inline-block;
+  margin: 0 50px 50px 0;
+  font-family: 'PT Serif', serif;
+}
+
+.book-image {
+  margin-right: 20px;
+  display: inline-block;
+  height: 125px;
+  width: 125px;
+  background-size: 100%;
 }
