@@ -1,12 +1,15 @@
 body {
   background-image: url(../img/background.jpg);
   border: solid black 10px;
-  padding-bottom: 100%;
+  padding-bottom: 100px;
+  border-left: solid black 200px;
+  border-right: solid black 200px;
 }
 #header h1 {
   position: absolute;
   text-align: center;
   top: 100px;
+  right: 10px;
   width: 100%;
   font-family: 'Cinzel', serif;
   font-size: 100px;
@@ -19,15 +22,34 @@ body {
   height: 300px;
   position: relative;
   border: solid black 20px;
+
 }
 h2 {
   font-size: 50px;
+  padding-bottom: 40px;
+  padding-top: 20px;
 }
 h2, h3, p, form {
   font-family: 'PT Serif', serif;
   font-weight: bold;
-  color: #5a3939;
+  color: black;
 }
 p, form {
-  font-size: 20px;
+  font-size: 25px;
 }
+p {
+  font-style: italic;
+  padding-bottom: 30px;
+}
+
+form {
+  margin-left: 100px;
+}
+
+button {
+    color: black;
+    background-color: #406e9c;
+    width: 500px;
+    height: 50px;
+    margin-top: 50px;
+  }
