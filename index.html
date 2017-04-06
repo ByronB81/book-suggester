@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Book Suggester</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery.js"></script>
     <script src="js/scripts.js"></script>
+    <title>Julian's Bookshelf</title>
   </head>
   <body>
 
+    <div id="header">
+      <img src="img/books.jpg" alt="a picture of books">
+      <h1>Julian's Bookshelf</h1>
+    </div>
+    <div class="container">
+      <h2>Welcome to the book suggester!</h3>
+      <p>Answer the questions below and we will give you some suggestions based on your answers!</p>
+      <div id="main">
+        <form>
+          <h3>What genre of books do you like most?</h3>
+          <input type="radio" name="genre" value="science-fiction" checked>Science Fiction<br>
+          <input type="radio" name="genre" value="non-fiction">Non-fiction <br>
+          <input type="radio" name="genre" value="fantasy">Fantasy <br>
+          <input type="radio" name="genre" value="romance">Romance <br>
+
+          <h3>Do you prefer modern books, or classics?</h3>
+          <input type="radio" name="era" value="modern" checked>Modern<br>
+          <input type="radio" name="era" value="classic">Classics <br>
+
+          <h3>Do you prefer a quick read, or a lengthy novel?</h3>
+          <input type="radio" name="page-count" value="short" checked>Quick read<br>
+          <input type="radio" name="page-count" value="long">Long novel<br>
+        </br>
+
+          <button type="submit" class="btn btn-success" id="submit">Click here to get your book suggestions!</button>
+
+      </div>
+    </div>
   </body>
 </html>
